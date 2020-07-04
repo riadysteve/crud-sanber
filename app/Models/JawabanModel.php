@@ -15,7 +15,7 @@ class JawabanModel {
   }
 
   public static function find_by_pertanyaan_id($id_pertanyaan) {
-    $items = DB::table('jawaban')->where('pertanyaan_id', $id_pertanyaan)->first();
+    $items = DB::table('jawaban')->where('pertanyaan_id', $id_pertanyaan)->get();
     return $items;
   }
 }

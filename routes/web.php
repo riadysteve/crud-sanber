@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store');
+Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index')->name('jawaban.index');
+Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
+Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
+Route::delete('/pertanyaan/{id}', 'PertanyaanController@delete');
